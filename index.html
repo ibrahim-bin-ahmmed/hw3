@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Crescent Moon with Stars</title>
+    <style>
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #001d3d; /* রাতের আকাশের জন্য */
+}
+
+.sky {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #001d3d; /* রাতের আকাশের রং */
+    overflow: hidden;
+}
+
+.crescent-moon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #f1c40f; /* চাঁদের রং */
+    position: absolute;
+    top: 20%;
+    left: 40%;
+    box-shadow: 0 0 30px 15px rgba(241, 196, 15, 0.5); /* চাঁদের আলো ছড়িয়ে পড়া */
+    animation: glow 3s infinite alternate; /* আলো ছড়িয়ে পড়া এবং সংকোচনের জন্য এনিমেশন */
+}
+
+.crescent-moon::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 30px; /* বাঁকা চাঁদ তৈরি করার জন্য স্থানান্তর */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #001d3d; /* রাতের আকাশের রং */
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 30px 15px rgba(241, 196, 15, 0.5); /* শুরুতে হালকা আলো */
+    }
+    100% {
+        box-shadow: 0 0 60px 30px rgba(241, 196, 15, 0.8); /* আলো আরও বেশি ছড়িয়ে পড়ছে */
+    }
+}
+
+.star {
+    position: absolute;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.star1 {
+    width: 5px;
+    height: 5px;
+    top: 10%;
+    left: 20%;
+}
+
+.star2 {
+    width: 7px;
+    height: 7px;
+    top: 30%;
+    left: 60%;
+}
+
+.star3 {
+    width: 4px;
+    height: 4px;
+    top: 50%;
+    left: 80%;
+}
+
+.star4 {
+    width: 6px;
+    height: 6px;
+    top: 70%;
+    left: 25%;
+}
+
+.star5 {
+    width: 8px;
+    height: 8px;
+    top: 80%;
+    left: 50%;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="sky">
+        <div class="crescent-moon"></div>
+        <div class="star star1"></div>
+        <div class="star star2"></div>
+        <div class="star star3"></div>
+        <div class="star star4"></div>
+        <div class="star star5"></div>
+    </div>
+</body>
+</html>
